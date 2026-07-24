@@ -5,6 +5,7 @@ from .mh_preprocessing import MhPreprocessing
 from .moltbook_preprocessing import MoltbookPreprocessing
 from .russia1_preprocessing import Russia1Preprocessing
 from .uk2019_preprocessing import Uk2019Preprocessing
+from .venezuela2_preprocessing import Venezuela2Preprocessing
 from .base_preprocessing import DatasetPreprocessing
 
 
@@ -14,6 +15,7 @@ DATASET_PREPROCESSORS = {
     "moltbook": MoltbookPreprocessing,
     "russia1": Russia1Preprocessing,
     "uk2019": Uk2019Preprocessing,
+    "venezuela2": Venezuela2Preprocessing,
 }
 
 
