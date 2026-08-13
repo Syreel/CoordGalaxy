@@ -8,11 +8,11 @@ from configs.base import PipelineConfig
 
 def get_config() -> PipelineConfig:
     """
-    Build the Russia1 Information Operations configuration used by the external main script.
+    Build the UaE (Middle East) Information Operations configuration used by the external main script.
 
-    :return: [PipelineConfig] Russia1 pipeline configuration.
+    :return: [PipelineConfig] UaE pipeline configuration.
     """
-    dataset_name = "russia1"
+    dataset_name = "uae"
 
     tw = TimeWindow(
         type_output_network="merged",
@@ -97,11 +97,11 @@ def get_config() -> PipelineConfig:
             "page_rank",
             "local_clustering_coefficient",
         ],
-        # Trimmed vs. venezuela2/russia2: this dataset is ~5x larger by row count and
-        # the full 12-algorithm sweep risked exhausting disk on this VM mid-run.
-        # glouvain is the only algorithm actually used downstream in ToxicCoord for the
-        # other two datasets too -- commented out (not deleted) so the full sweep can be
-        # restored later if disk allows.
+        # Trimmed from the start (lesson from russia1, see RUN_REPORT.md §17): this
+        # dataset is ~1.8x venezuela2's row count and disk on this VM is chronically
+        # tight. glouvain is the only algorithm actually used downstream in ToxicCoord
+        # for any dataset so far -- commented out (not deleted) so the full sweep can
+        # be restored later if disk allows.
         single_layer_algorithm_dict={
             "louvain": [{"resolution": 1}],
             # "infomap": [None],

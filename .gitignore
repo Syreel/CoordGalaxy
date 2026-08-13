@@ -12,3 +12,6 @@ utils/ElasticSearch/config/credentials.json
 # Python cache directories
 __pycache__/
 utils/DomainCategoryManager/domain_categories.csv
+
+# Run logs: regenerated on every execution, and one of them is 2.7 MB.
+*.log
